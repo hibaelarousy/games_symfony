@@ -1,0 +1,120 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Play
+{% endblock %}
+
+{% block body %}
+	{% include 'home/nav.html.twig' %}
+
+
+	<form action="" method="post">
+		{% set user_choice = "" %}
+		{% set computer_choice = "" %}
+		<section class="container mt-5">
+			{% if app.request.method == 'POST' %}
+				{% set user_choice = app.request.get('choice') %}
+				{% set choices = ["rock", "paper", "Scissors"] %}
+				{% set computer_choice = random(choices)  %}
+
+				{# Vous avez choisi :
+									{{ user_choice }}<br>
+									L'ordinateur a choisi :
+									{ computer_choice }}<br><br> #}
+
+				{% if user_choice == computer_choice %}
+					<div class="alert alert-dismissible alert-info ">
+
+						<h4 class="alert-heading">Equality!</h4>
+
+					</div>
+
+				{% elseif user_choice == 'rock' and computer_choice == 'Scissors' or
+            user_choice == 'paper' and computer_choice == 'rock' or
+            user_choice == 'Scissors' and computer_choice == 'rock' or 
+			 user_choice == 'Scissors' and computer_choice == 'paper' %}
+					<div class="alert alert-dismissible alert-info">
+
+						<h4 class="alert-heading">
+							You have won !</h4>
+
+					</div>
+
+				{% else %}
+					<div class="alert alert-dismissible alert-info">
+
+						<h4 class="alert-heading">
+							The computer won!</h4>
+
+					</div>
+
+				{% endif %}
+			{% endif %}
+			<div style="display: flex;   margin: 20%;  " class="mt-5">
+				<div class="row" style="  margin-left: 5%;">
+					<div class="col">
+						<div class="card mb-3" style="   ">
+							<h3 class="card-header text-primary">YOU</h3>
+
+							{% if user_choice =='rock'  %}
+
+								<img src="https://www.seekpng.com/png/full/816-8161371_rock-paper-scissor-icon-png.png" class="d-block user-select-none" width="100%" height="200" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveaspectratio="xMidYMid slice" viewbox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+
+							{% elseif user_choice =='paper' %}
+								<img src="https://www.pngitem.com/pimgs/m/592-5920636_rock-paper-scissors-clipart-rock-paper-scissors-png.png" class="d-block user-select-none" width="100%" height="200" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveaspectratio="xMidYMid slice" viewbox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+
+							{% elseif user_choice =='Scissors' %}
+								<img src="https://www.seekpng.com/png/full/111-1114370_rock-paper-scissors-rock-paper-scissors-clipart.png" class="d-block user-select-none" width="100%" height="200" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveaspectratio="xMidYMid slice" viewbox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+							{% else %}
+								<img src="https://media.istockphoto.com/id/1269211670/fr/vectoriel/roche-papier-ciseaux-ensemble-dic%C3%B4nes-de-parties-de-corps.jpg?s=612x612&w=0&k=20&c=TBRMAM5ylNVweDEOwrdfFM0kvnH5m7oysW1Le1i1Jmw=" class="d-block user-select-none" width="100%" height="200" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveaspectratio="xMidYMid slice" viewbox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+
+							{% endif    %}
+
+
+						</div>
+
+						<h3 class="text-warning">To choose :</h3>
+
+						<p>
+							<input class="text-muted" type="radio" name="choice" value="rock"/>Rock</p>
+						<p>
+							<input class="text-muted" type="radio" name="choice" value="paper"/>Paper</p>
+						<p>
+							<input class="text-muted" type="radio" name="choice" value="Scissors"/>Scissors</p>
+						<br>
+						<button type="submit" name="submit" class="btn btn-dark">Play</button>
+					</div>
+				</div>
+
+
+				<div class="row" style="  margin-left: 15%;">
+					<div class="col">
+						<div class="card mb-3" style="   ">
+							<h3 class="card-header text-primary">ME</h3>
+
+							{% if computer_choice =='rock'  %}
+
+								<img src="https://www.seekpng.com/png/full/816-8161371_rock-paper-scissor-icon-png.png" class="d-block user-select-none" width="100%" height="200" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveaspectratio="xMidYMid slice" viewbox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+
+							{% elseif computer_choice =='paper' %}
+								<img src="https://www.pngitem.com/pimgs/m/592-5920636_rock-paper-scissors-clipart-rock-paper-scissors-png.png" class="d-block user-select-none" width="100%" height="200" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveaspectratio="xMidYMid slice" viewbox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+
+							{% elseif computer_choice =='Scissors' %}
+								<img src="https://www.seekpng.com/png/full/111-1114370_rock-paper-scissors-rock-paper-scissors-clipart.png" class="d-block user-select-none" width="100%" height="200" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveaspectratio="xMidYMid slice" viewbox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+							{% else %}
+								<img src="https://media.istockphoto.com/id/1269211670/fr/vectoriel/roche-papier-ciseaux-ensemble-dic%C3%B4nes-de-parties-de-corps.jpg?s=612x612&w=0&k=20&c=TBRMAM5ylNVweDEOwrdfFM0kvnH5m7oysW1Le1i1Jmw=" class="d-block user-select-none" width="100%" height="200" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveaspectratio="xMidYMid slice" viewbox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+
+							{% endif    %}
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+		</section>
+
+
+	</form>
+
+{% endblock %}

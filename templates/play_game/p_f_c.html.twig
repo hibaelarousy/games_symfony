@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Play
+{% endblock %}
+
+{% block body %}
+	{% include 'home/nav.html.twig' %}
+
+<html >
+  <head>
+   
+    <link rel="stylesheet" href="{{ asset('css/p_f_c.css')}}" />
+  
+  </head>
+  <body>
+    <div class="score">
+      <p>Vous</p>
+      <p>Ordinateur</p>
+      <p id="score-joueur">0</p>
+      <p id="score-ordinateur">0</p>
+      <div id="reset">Recommencer</div>
+    </div>
+    <div class="action">
+      <p id="message">A vous de jouer !</p>
+      <div id="next">Tour suivant</div>
+    </div>
+    <div class="jeu">
+      <div class="choix">
+        <div class="button btn-joueur" id="pierre">
+          <img src="{{asset('image/pierre.png')}}" alt="pierre" />
+          <p>Pierre</p>
+        </div>
+        <div class="button btn-joueur" id="feuille">
+          <img src="{{asset('image/feuille.png')}}" alt="feuille" />
+          <p>Feuille</p>
+        </div>
+        <div class="button btn-joueur" id="ciseaux">
+          <img src="{{asset('image/ciseaux.png')}}" alt="ciseaux" />
+          <p>Ciseaux</p>
+        </div>
+      </div>
+
+      <div class="choix">
+        <div class="button btn-ordi" id="opierre">
+          <img src="{{asset('image/pierre.png')}}" alt="pierre" />
+          <p>Pierre</p>
+        </div>
+        <div class="button btn-ordi" id="ofeuille">
+          <img src="{{asset('image/feuille.png')}}" alt="feuille" />
+          <p>Feuille</p>
+        </div>
+        <div class="button btn-ordi" id="ociseaux">
+          <img src="{{asset('image/ciseaux.png')}}" alt="ciseaux" />
+          <p>Ciseaux</p>
+        </div>
+      </div>
+    </div>
+    <script src="{{ asset('js/p_f_c.js')}}"></script>
+  </body>
+</html>
+
+
+	
+
+{% endblock %}

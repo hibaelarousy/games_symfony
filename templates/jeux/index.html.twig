@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gmaes
+{% endblock %}
+
+{% block body %}
+	{% include 'home/nav.html.twig' %}
+
+
+	<div
+		class="example-wrapper">
+		{# <h1>Hello
+					{% if app.user  %}
+		
+						{{ app.User.lastname }}
+					{% endif %}
+				</h1> #}
+
+		<div style="display: flex; flex-wrap: wrap; margin-left:8%; ">
+			<div class="card border-primary mb-3 " style="max-width: 22rem;  margin: 10px; ">
+				<div class="card-header"><img style="max-width: 15rem;" src="https://3.bp.blogspot.com/-g95UWgKPai0/WKqihLDxXtI/AAAAAAAAAQY/HEC7jAbzPKUk3j-CJKh3TSBB-3w444jxQCLcB/s320/512x512.png" alt="" srcset=""></div>
+				<div class="card-body">
+					<h4 class="card-title">Connect the Dots</h4>
+					<button type="button" class="btn btn-dark">Play</button>
+				</div>
+			</div>
+
+			<div class="card border-primary mb-3 " style="max-width: 22rem;  margin: 10px; ">
+				<div class="card-header"><img style="max-width: 15rem;" src="https://www.jeuxetcompagnie.fr/wp-content/uploads/2012/06/d%C3%A9-5.png?ezimgfmt=ng:webp/ngcb1" alt="" srcset=""></div>
+				<div class="card-body">
+					<h4 class="card-title">dice games</h4>
+
+					<button type="button" class="btn btn-dark">Play</button>
+				</div>
+			</div>
+
+			<div class="card border-primary mb-3 " style="max-width: 22rem;  margin: 10px; ">
+				<div class="card-header"><img style="max-width: 15rem;" src="https://venturebeat.com/wp-content/uploads/2014/02/flappy-bird-big.jpg?w=1200&strip=all" alt="" srcset=""></div>
+				<div class="card-body">
+					<h4 class="card-title">Bird</h4>
+					<a class="btn btn-dark me-sm-2 mr-4" href="{{ path('app_bird')}}">Play</a>
+				</div>
+			</div>
+			<div class="card border-primary mb-3 " style="max-width: 22rem;  margin: 10px; ">
+				<div class="card-header"><img style="max-width: 15rem;" src="https://media.istockphoto.com/id/1269211670/fr/vectoriel/roche-papier-ciseaux-ensemble-dic%C3%B4nes-de-parties-de-corps.jpg?s=612x612&w=0&k=20&c=TBRMAM5ylNVweDEOwrdfFM0kvnH5m7oysW1Le1i1Jmw=" alt="" srcset=""></div>
+				<div class="card-body">
+					<h4 class="card-title">Rock , Paper, Scissors
+					</h4>
+					<a class="btn btn-dark me-sm-2 mr-4" href="{{ path('app_play_game')}}">Play</a>
+				</div>
+			</div>
+			<div class="card border-primary mb-3 " style="max-width: 22rem;  margin: 10px; ">
+				<div class="card-header"><img style="max-width: 15rem;" src="https://pairs.one/images/landing.jpg" alt="" srcset=""></div>
+				<div class="card-body">
+					<h4 class="card-title">memory game</h4>
+					<button type="button" class="btn btn-dark">Play</button>
+				</div>
+			</div>
+			<div class="card border-primary mb-3 " style="max-width: 22rem;  margin: 10px; ">
+				<div class="card-header"><img style=" width: 15rem;" src="https://www.memozor.com/media/k2/items/cache/ab62275605c41a191b9e46f582304ada_S.jpg" alt="" srcset=""></div>
+				<div class="card-body">
+					<h4 class="card-title">memory game</h4>
+					<a class="btn btn-dark me-sm-2 mr-4" href="{{ path('app_memory')}}">Play</a>
+				</div>
+			</div>
+			<div class="card border-primary mb-3 " style="max-width: 22rem;  margin: 10px; ">
+				<div class="card-header"><img style="max-width: 15rem;" src="https://play-lh.googleusercontent.com/RdZNKDuKFKe-QOf4M6_dCZWfc1owXJQ3HI5QuGpV8fsHWwtt9LBn2VwvWJdfGr-FfWc=w240-h480-rw" alt="" srcset=""></div>
+				<div class="card-body">
+					<h4 class="card-title">
+						multijoueur
+					</h4>
+					<button type="button" class="btn btn-dark">Play</button>
+				</div>
+			</div>
+			<div class="card border-primary mb-3 " style="max-width: 22rem;  margin: 10px; ">
+				<div class="card-header"><img style="max-width: 15rem;" src="https://play-lh.googleusercontent.com/yL_QuM9V33ApKbgVqpngfMgSs0JgabKDCB2UTtFSFrNfg9ecCFX4DcTMeSYSwC_BNUE=w240-h480-rw" alt="" srcset=""></div>
+				<div class="card-body">
+					<h4 class="card-title">Challenge friends</h4>
+					<a class="btn btn-dark me-sm-2 mr-4" href="{{ path('app_tic_tac')}}">Play</a>
+				</div>
+			</div>
+			<div class="card border-primary mb-3 " style="max-width: 22rem;  margin: 10px; ">
+				<div class="card-header"><img style="max-width: 15rem;" src="https://play-lh.googleusercontent.com/xU3Ne2h6epAFKzI4t1akYMwQUWQCl1AIFB1n-GkQf3YASMfyQT3ZQwv9nVGdb9VXUzr5=w240-h480-rw" alt="" srcset=""></div>
+				<div class="card-body">
+					<h4 class="card-title">
+						Jeu de Nombres
+					</h4>
+					<button type="button" class="btn btn-dark">Play</button>
+				</div>
+			</div>
+			<div class="card border-primary mb-3 " style="max-width: 22rem;  margin: 10px; ">
+				<div class="card-header"><img style="max-width: 15rem;" src="https://pic.clubic.com/v1/images/1785027/raw?width=1200&fit=max&hash=407c67627c3e90ee8219ab17a05db42ceaf23840" alt="" srcset=""></div>
+				<div class="card-body">
+					<h4 class="card-title">Challenge friends</h4>
+					<button type="button" class="btn btn-dark">Play</button>
+				</div>
+			</div>
+
+
+		</div>
+
+	{% endblock %}

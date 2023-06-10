@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}comment
+{% endblock %}
+
+{% block body %}
+{% include 'home/nav.html.twig' %}
+	<section class="container mt-5">
+		<div class="row">
+			<div class="col">
+				<h1>comment</h1>
+
+				{{ form_start(comment) }}
+
+				
+				{# {{ form_row(registrationForm.agreeTerms) }} #}
+                    {{ form_widget(comment) }}
+				<button type="submit" class="btn btn-success my-3">comment</button>
+				{{ form_end(comment) }}
+
+
+			</div>
+		</div>
+	</section>
+{% endblock %}

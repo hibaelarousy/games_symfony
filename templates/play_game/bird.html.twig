@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Games
+{% endblock %}
+
+{% block body %}
+	{% include 'home/nav.html.twig' %}
+	<head>
+		<link rel="stylesheet" href="{{asset('css/bird_A copy.css')}}">
+		
+	</head>
+
+	  <div class="background"></div>
+    <img src="{{ asset('image/Bird.png')}}" alt="bird-img" class="bird" id="bird-1">
+    <div class="message">
+        Enter To Start Game <p><span style="color: red;">&uarr;</span> ArrowUp to Control</p>
+    </div>
+    <div class="score">
+        <span class="score_title"></span>
+        <span class="score_val"></span>
+    </div>
+    <script src="{{ asset('js/bird copy.js')}}" defer></script>
+</body>
+</html>
+{% endblock %}

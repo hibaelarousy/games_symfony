@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Games
+{% endblock %}
+
+{% block body %}
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#"><img style='height:3em; width: 3em;' src="https://i.pinimg.com/originals/a4/04/fa/a404fa3232d26e91f8ea3a0937c3cb77.png" alt="" srcset=""></a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarColor02">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link active" href="{{ path('app_product')}}">Home
+
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ path('app_jeux')}}">Games</a>
+					</li>
+                  {% if app.user %}
+					<li class="nav-item">
+						<a class="nav-link" href="{{ path('app_user')}}">Profile</a>
+					</li>
+					{% if  is_granted('ROLE_ADMIN') %}
+						<li class="nav-item">
+					   <a class="nav-link" href="{{ path('app_user')}}">Uesrs</a>
+						
+					</li>
+					{% endif %}
+					
+					{% endif %}
+
+					<li class="nav-item">
+						<a class="nav-link" href="{{ path('app_about')}}">About</a>
+					</li>
+
+				</ul>
+
+
+			</div>
+			<form class="d-flex">
+				{% if app.user %}
+					<a class="btn btn-info me-sm-2 mr-4" href="{{ path('app_logout')}}">Logout</a>
+				{% else %}
+					<a class="btn btn-info me-sm-2 mr-4" href="{{ path('app_login')}}">Sign in</a>
+					<a class="btn btn-info me-sm-2 mr-4" href="{{ path('app_register')}}">Sign up</a>
+
+				{% endif %}
+
+
+			</form>
+		</div>
+	</nav>
+
+{% endblock %}
